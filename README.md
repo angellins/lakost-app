@@ -171,4 +171,4 @@ Data kost saat ini menggunakan list statis di `home_screen.dart` dan `search_scr
 
 ---
 
-*Dibuat dengan ❤️ menggunakan Flutter — laKost 2024*
+*Dibuat dengan ❤️ menggunakan Flutter — laKost 2026*
