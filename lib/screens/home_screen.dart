@@ -214,7 +214,7 @@ class _HomeScreenState extends State<HomeScreen>
                       Text(
                         'Cari kost terbaik untukmu hari ini',
                         style: GoogleFonts.poppins(
-                          color: AppTheme.accentCyan.withOpacity(0.95),
+                          color: Colors.white,
                           fontSize: 14,
                         ),
                       ),

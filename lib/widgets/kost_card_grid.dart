@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_theme.dart';
+import '../screens/detail_kost_screen.dart';
 
 class KostCardGrid extends StatelessWidget {
   final Map<String, dynamic> data;
@@ -25,7 +26,14 @@ class KostCardGrid extends StatelessWidget {
     final type = data['type'] ?? 'Putra';
 
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => DetailKostScreen(data: data),
+          ),
+        );
+      },
       borderRadius: BorderRadius.circular(16),
       child: Container(
         decoration: BoxDecoration(

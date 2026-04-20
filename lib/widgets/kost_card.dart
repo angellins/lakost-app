@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_theme.dart';
+import '../screens/detail_kost_screen.dart';
 
 class KostCard extends StatelessWidget {
   final Map<String, dynamic> data;

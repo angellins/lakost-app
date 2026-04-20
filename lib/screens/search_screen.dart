@@ -15,15 +15,45 @@ class _SearchScreenState extends State<SearchScreen> {
   String _query = '';
   int _selectedFilter = 0;
 
-  final List<String> _filters = ['Tersedia', 'Putri', 'Campuran'];
+  final List<String> _filters = ['Tersedia', 'Putra', 'Putri', 'Campur'];
 
   final List<Map<String, dynamic>> _allKost = [
-    {'name': 'Kos Asri Putra', 'address': 'Jl. Pelajar, Lamongan', 'price': '500.000', 'type': 'Putra'},
-    {'name': 'Kos Asri Putra', 'address': 'Jl. Pelajar, Lamongan', 'price': '500.000', 'type': 'Putri'},
-    {'name': 'Kos Asri Putra', 'address': 'Jl. Pelajar, Lamongan', 'price': '500.000', 'type': 'Campur'},
-    {'name': 'Kos Asri Putra', 'address': 'Jl. Pelajar, Lamongan', 'price': '500.000', 'type': 'Putra'},
-    {'name': 'Kos Asri Putra', 'address': 'Jl. Pelajar, Lamongan', 'price': '500.000', 'type': 'Putri'},
-    {'name': 'Kos Asri Putra', 'address': 'Jl. Pelajar, Lamongan', 'price': '500.000', 'type': 'Campur'},
+    {
+      'name': 'Kos Asri Putra',
+      'address': 'Jl. Pelajar, Lamongan',
+      'price': '500.000',
+      'type': 'Putra'
+    },
+    {
+      'name': 'Kos Asri Putra',
+      'address': 'Jl. Pelajar, Lamongan',
+      'price': '500.000',
+      'type': 'Putri'
+    },
+    {
+      'name': 'Kos Asri Putra',
+      'address': 'Jl. Pelajar, Lamongan',
+      'price': '500.000',
+      'type': 'Campur'
+    },
+    {
+      'name': 'Kos Asri Putra',
+      'address': 'Jl. Pelajar, Lamongan',
+      'price': '500.000',
+      'type': 'Putra'
+    },
+    {
+      'name': 'Kos Asri Putra',
+      'address': 'Jl. Pelajar, Lamongan',
+      'price': '500.000',
+      'type': 'Putri'
+    },
+    {
+      'name': 'Kos Asri Putra',
+      'address': 'Jl. Pelajar, Lamongan',
+      'price': '500.000',
+      'type': 'Campur'
+    },
   ];
 
   List<Map<String, dynamic>> get _filtered {
@@ -40,8 +70,10 @@ class _SearchScreenState extends State<SearchScreen> {
 
     // Filter by chip
     if (_selectedFilter == 1) {
-      result = result.where((k) => k['type'] == 'Putri').toList();
+      result = result.where((k) => k['type'] == 'Putra').toList();
     } else if (_selectedFilter == 2) {
+      result = result.where((k) => k['type'] == 'Putri').toList();
+    } else if (_selectedFilter == 3) {
       result = result.where((k) => k['type'] == 'Campur').toList();
     }
 
@@ -133,8 +165,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       children: List.generate(_filters.length, (index) {
                         final isSelected = index == _selectedFilter;
                         return GestureDetector(
-                          onTap: () =>
-                              setState(() => _selectedFilter = index),
+                          onTap: () => setState(() => _selectedFilter = index),
                           child: AnimatedContainer(
                             duration: const Duration(milliseconds: 220),
                             padding: const EdgeInsets.symmetric(
@@ -212,3 +243,4 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 }
+
