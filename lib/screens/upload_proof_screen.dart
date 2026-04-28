@@ -186,7 +186,8 @@ class _UploadProofScreenState extends State<UploadProofScreen> {
   @override
   Widget build(BuildContext context) {
     // Format tanggal hari ini (Dummy, sesuaikan jika perlu data transaksi asli)
-    String formattedDate = DateFormat('dd MMM yyyy | HH:mm:ss', 'id').format(DateTime.now());
+    String formattedDate =
+        DateFormat('dd MMM yyyy | HH:mm:ss', 'id').format(DateTime.now());
 
     return Scaffold(
       backgroundColor: AppTheme.softWhite,
@@ -261,46 +262,54 @@ class _UploadProofScreenState extends State<UploadProofScreen> {
                             GestureDetector(
                               onTap: _pickImage,
                               child: Container(
-                                height: 200, // Sedikit lebih tinggi agar preview jelas
+                                height:
+                                    200, // Sedikit lebih tinggi agar preview jelas
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: Colors.blue.shade50.withOpacity(0.5),
                                   borderRadius: BorderRadius.circular(16),
                                   border: Border.all(
-                                    color: AppTheme.primaryBlue.withOpacity(0.3),
-                                    style: BorderStyle.solid, // Bisa diganti Dashed jika pakai package ekstra
+                                    color:
+                                        AppTheme.primaryBlue.withOpacity(0.3),
+                                    style: BorderStyle
+                                        .solid, // Bisa diganti Dashed jika pakai package ekstra
                                     width: 2,
                                   ),
                                 ),
                                 child: _buildImagePreview(),
                               ),
                             ),
-                            
+
                             const SizedBox(height: 12),
 
                             // Nama File & Tombol Hapus (Jika sudah upload)
                             if (_fileName != null)
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 4),
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(color: Colors.grey.shade200)
-                                ),
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                        color: Colors.grey.shade200)),
                                 child: Row(
                                   children: [
-                                    const Icon(Icons.description_outlined, size: 16, color: Colors.grey),
+                                    const Icon(Icons.description_outlined,
+                                        size: 16, color: Colors.grey),
                                     const SizedBox(width: 6),
                                     Expanded(
                                       child: Text(
                                         _fileName!,
-                                        style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey.shade700),
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 11,
+                                            color: Colors.grey.shade700),
                                         overflow: TextOverflow.ellipsis,
                                       ),
                                     ),
                                     IconButton(
                                       onPressed: _removeImage,
-                                      icon: const Icon(Icons.cancel, color: Colors.redAccent, size: 18),
+                                      icon: const Icon(Icons.cancel,
+                                          color: Colors.redAccent, size: 18),
                                       padding: EdgeInsets.zero,
                                       constraints: const BoxConstraints(),
                                     )
@@ -354,12 +363,14 @@ class _UploadProofScreenState extends State<UploadProofScreen> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(8, 20, 16, 25), // Sesuaikan padding agar full screen
+        padding: const EdgeInsets.fromLTRB(
+            8, 20, 16, 25), // Sesuaikan padding agar full screen
         child: Row(
           children: [
             IconButton(
               onPressed: () => Navigator.pop(context),
-              icon: const Icon(Icons.arrow_back_ios_rounded, color: Colors.white, size: 20),
+              icon: const Icon(Icons.arrow_back_ios_rounded,
+                  color: Colors.white, size: 20),
             ),
             Expanded(
               child: Text(
@@ -396,7 +407,8 @@ class _UploadProofScreenState extends State<UploadProofScreen> {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.cloud_upload_outlined, size: 48, color: AppTheme.primaryBlue),
+          const Icon(Icons.cloud_upload_outlined,
+              size: 48, color: AppTheme.primaryBlue),
           const SizedBox(height: 10),
           Text(
             "Upload Bukti Transfer",

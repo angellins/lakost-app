@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_theme.dart';
 import 'bottom_nav_bar.dart';
+import '../screens/bottom_nav_bar.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -63,7 +64,25 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     _startSequence();
+    _startApp();
   }
+
+void _startApp() async {
+  await Future.delayed(const Duration(seconds: 2));
+
+  if (!mounted) return;
+
+  Navigator.pushReplacement(
+    context,
+    PageRouteBuilder(
+      pageBuilder: (_, __, ___) => const BottomNavBar(),
+      transitionsBuilder: (_, animation, __, child) {
+        return FadeTransition(opacity: animation, child: child);
+      },
+      transitionDuration: const Duration(milliseconds: 500),
+    ),
+  );
+}
 
   Future<void> _startSequence() async {
     await Future.delayed(const Duration(milliseconds: 300));

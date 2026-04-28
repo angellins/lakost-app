@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart'; // Jika dibutuhkan
 import 'package:intl/date_symbol_data_local.dart'; // Library inisialisasi bahasa
 import 'screens/splash_screen.dart';
 import 'theme/app_theme.dart';
+import 'services/api_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,3 +40,4 @@ class LaKostApp extends StatelessWidget {
     );
   }
 }
+
